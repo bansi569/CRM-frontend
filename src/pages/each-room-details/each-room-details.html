@@ -1,0 +1,44 @@
+<!--
+  Generated template for the EachRoomDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>eachRoomDetails</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let result of roomdetails">
+     <ion-card-header color="primary">
+            {{result.roomname}}
+     </ion-card-header>
+       <ion-card-content *ngFor="let switch of result.switches">
+           <ion-grid>
+           <ion-row>
+              <ion-col>
+               switch_board_s.no
+              </ion-col>
+              <ion-col>
+               No of devices
+              </ion-col>
+           </ion-row>
+           <ion-row >
+              <ion-col>
+                {{switch.switch_id}}
+              </ion-col>
+              <ion-col>
+                <ion-input type="number" [(ngModel)]="switch.no_devices"></ion-input>
+              </ion-col>
+           </ion-row>
+         </ion-grid>
+
+       </ion-card-content>
+
+  </ion-card>
+  <div>
+  <button ion-button (click)="onSubmitEnquiry()">submit</button>
+  </div>
+</ion-content>

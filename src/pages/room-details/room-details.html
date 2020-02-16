@@ -1,0 +1,59 @@
+<!--
+  Generated template for the RoomDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>room-details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<p>this is the first step</p>
+<p>please enter no of rooms that you want to automate</p>
+<ion-item>
+   <ion-input type="number" [(ngModel)]="totalrooms" required ></ion-input>
+</ion-item>
+<p></p>
+<p></p>
+<p></p>
+<button ion-button (click)="onSubmit()">NEXT</button>
+<ion-grid>
+  <ion-row>
+  <ion-col></ion-col>
+  <ion-col></ion-col>
+  <ion-col></ion-col>
+  <ion-col>
+  <button ion-button (click)="onSubmitDetails()" [disabled]="(totalrooms==''||totalrooms==null)">submit</button>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+<ng-container *ngIf="flag>0" >
+  <ion-grid >
+    <ion-row>
+    <ion-col>
+    roomname
+    </ion-col>
+
+
+    <ion-col>
+     total switch boards in room
+    </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let result of msg;let i=index" style="background:#eff0f1">
+      <ion-col >
+        <ion-item>
+            <ion-input type="name"  [(ngModel)]="msg[i].roomname" required></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col >
+        <ion-item>
+            <ion-input type="number"[(ngModel)]="msg[i].switch" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ng-container>
+</ion-content>

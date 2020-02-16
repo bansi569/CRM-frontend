@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      WELCOME
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div text-center>
+              <h3>Go ahead,fill in the details and get the best product for your house!!!!</h3>
+            </div>
+            <div padding>
+              <ion-item>
+                <ion-input name="name" [(ngModel)]="username" type="text" placeholder="Enter UserName" required></ion-input>
+              </ion-item>
+              <span *ngIf="username == '' || username == null">
+                This is required field
+                  </span>
+
+                    <ion-item>
+                      <ion-input name="phn" type="number" placeholder="enter phonemumber" ng-minlength="10" [(ngModel)]="phone" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-input name="emal" type="email" placeholder="enter email" [(ngModel)]="email" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                       <ion-input name="addr" type="text" placeholder="enter address" [(ngModel)]="address" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                       <ion-input name="cty" type="text" placeholder="enter city" [(ngModel)]="city" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                       <ion-input name="ste" type="text" placeholder="enter state" [(ngModel)]="state" required></ion-input>
+                    </ion-item>
+                    <div>
+                    <button ion-button [disabled]="(username=='' || username == null||phone==''||phone==null||phone?.length<10) ? true: false" (click)="onWelcome()">goahead!</button>
+                    </div>
+
+                    </div>
+
+</ion-content>
